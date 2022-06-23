@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Bootstrap 4 CSS package -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous"/>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/basestyles.css')}}">
+    {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark secondary-style nav-pills nav-fill">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            <!-- If the user is logged in, then display the Home, About and Logout menu in navigation bar -->
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" id="home" href="/"><span class="custom-button">SOOMMARY</span></a>
+            <a class="nav-item nav-link" id="about" href="/about"><span class="custom-button">About</span></a>
+            <a class="nav-item nav-link" id="logout" href="/logout"><span class="custom-button">Logout</span></a>
+
+            <!-- If the user is not logged in, then display the About, Login and Sign up menu in navigation bar -->
+            {% else %}
+            <a class="nav-item nav-link" id="about" href="/about"><span class="custom-button">About</span></a>
+            <a class="nav-item nav-link" id="login" href="/login"><span class="custom-button">Login</span></a>
+            <a class="nav-item nav-link" id="signUp" href="/sign-up"><span class="custom-button">Sign up</span></a>
+            {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Get messages from the flask file -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %} 
+
+      <!-- Loop to go through each message -->
+      {% for category, message in messages %} 
+
+        <!-- If it is an error message, then display the warning alert -->
+        {% if category =='error' %}
+        <div class="alert alert-warning alter-dismissable" role="alert">
+        {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- Otherwise, if it is not an error message, display the info alert -->
+        {% else %}
+        <div class="alert alert-success alter-dismissable" role="alert">
+        {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %} 
+      {% endfor %} 
+    {% endif %} 
+    {% endwith %}
+    <br>
+
+        {% block body %}
+        {% endblock %}
+
+    <!-- Bootstrap 4 JavaScript package -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Link to index.js -->
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

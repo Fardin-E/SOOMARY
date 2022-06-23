@@ -1,0 +1,175 @@
+<!-- Use the base.html template for naviagtion bar, flash messages and bootstrap package -->
+{% extends "base.html" %}
+{% block title %} About - SOOMMARY {% endblock %}
+
+{% block body %}
+<h1 class="container-fluid">About us</h1>
+<br>
+<!-- Collapsible panels using bootstrap -->
+<div class="accordion" id="accordion">
+    <div class="card about-color">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <h4>What is SOOMMARY?</h4>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <ul>
+                <li>A web application designed to make keeping up with the news easier.</li>
+                <li>Minimalistic web application to keep the focus on productivity.</li>
+                <li>Do you want to read the news but do not have enough time to go through the article? SOOMMARY was built for you.</li>
+                <li>You do not want to just read the article heading. Sometimes it is very misleading to make people click. If you really want to know more about the news but you lack the time, SOOMMARY is excellent to summarize the ongoings of the world to small digestable bits.</li>
+                <li>Keep track of every article you have summarized.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card about-color">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h4>Technologies used in SOOMMARY</h4>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+            <ul>
+                <li>HTML: The most basic building block of a web application.</li>
+                <li>CSS: Cascading Style Sheets is a language used to style and describe the presentation of a document written in markup languages such as HTML.</li>
+                <li>Bootstrap: A free and open-soruce CSS framework.</li>
+                <li>JavaScript: Frontend programming language to make web application dynamic.</li>
+                <li>Python: Python is a high-level general-purpose programming language thats emphasizes on code readability and indentation.</li>
+                <li>Flask: It is a micro web framework written in python. We used different flask libraries like newspaper to summarize our news web application. Also we made a database for login with the help of flask-sqlalchemy.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card about-color">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <h4>Relation to course</h4>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li>Chapter 2: We used HTML to structure the web application.</li>
+          <li>Chapter 3: We CSS to make the web application presentatble.</li>
+          <li>Lab 3: We used Bootstrap to create the navigation bar and make the web application responsive.</li>
+          <li>Chapter 4: We used HTML forms to get user input.</li>
+          <li>Chapter 5: We used JavaScript so the user can delete the summaries that are being displayed.</li>
+          <li>Chapter 8: We worked with databases to store and retrieve user information.</li>
+        </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card about-color">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <h4>What we learned</h4>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li>Python web application libraries
+              <ul> 
+                  <li>Learned Python syntax and how indentation is very important.</li>
+                  <li>Used flask-sqlalchemy to make our database.</li>
+                  <li>Used newspaper to summarize our inputs from the searchbar.</li>
+              </ul>
+          </li>
+          <li>Learned to program as a group, delegate progamming tasks, and communicating through comments.</li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card about-color">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <h4>Challenges we faced</h4>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li>Python
+              <ul>
+                  <li>We had to learn python for the project as it was not part of this course.</li>
+                  <li>We learned how to use different libraries and their purposes like newspaper.</li>
+                  <li>Making a virtual environment for python and installing a lot of the libraries.</li>
+                  <li>Sharing with group members.</li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card about-color">
+  <div class="card-header" id="headingSix">
+    <h5 class="mb-0">
+      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          <h4>Things we could improve</h4>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+    <div class="card-body">
+      <ul>
+          <li>Github would have made sharing much easier. But we had little time to learn how to use it after learning Python.</li>
+          <li>We could learn how to arrange our directories better. </li>
+      </ul>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Cards for information about the group -->
+<div class="card-group pt-4 m-4">
+    <div class="card about-color">
+      <div class="card-body">
+        <h5 class="card-title">Abdul Shahid</h5>
+        <ul>
+            <li>Second-year Software Engineering Undergraduate</li>
+            <li>Email: abdul.shahid@ontariotech.net</li>
+        </ul>
+      </div>
+        </a>
+    </div>
+    <div class="card about-color">
+      <div class="card-body">
+        <h5 class="card-title">Fardin Rahman</h5>
+        <ul>
+            <li>Second-year Software Engineering Undergraduate</li>
+            <li>Email: mdfardin.rahman@ontariotechu.net</li>
+        </ul>
+      </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

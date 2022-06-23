@@ -1,0 +1,28 @@
+.secondary-style{
+    background-color: rgb(40, 85, 144);
+}
+
+body{
+    background-color: rgb(124, 164, 238, 0.4);
+}
+
+h4{
+    font-size: 1.2rem;
+}
+
+h5{
+    font-size: 1.15rem;
+}
+.custom-button{
+    color: white;
+}
+
+.summary{
+    background-color: rgb(124, 164, 238, 0.2);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.about-color{
+    background-color: rgb(124, 164, 238, 0.3);
+}

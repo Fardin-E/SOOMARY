@@ -1,0 +1,28 @@
+<!-- Use the base.html template for naviagtion bar, flash messages and bootstrap package -->
+{% extends "base.html" %}
+{% block title %} Home - SOOMMARY {% endblock %}
+
+{% block body %}
+<!-- Loop to display each summary in the database of current user -->
+{% for summ in user.summs %}
+  <br>
+  <div class="d-flex justify-content-evenly">
+  <div class="list-group-item summary">
+    {{ summ.data }}
+    <button type="button" class="close" onClick="deleteSumm({{ summ.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  </div>
+  {% endfor %}
+
+  <!-- Form for user to enter URL of the article -->
+  <div align="center">
+  <h1>SOOMMARY</h1>
+<form method="POST">
+  <input type="url" name="url" id="url" class="form-control col-lg-8" placeholder="Enter URL"></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary secondary-style">SOOMMARIZE</button>
+</form>
+</div>
+{% endblock %}
